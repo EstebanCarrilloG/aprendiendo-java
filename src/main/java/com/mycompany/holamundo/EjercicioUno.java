@@ -10,9 +10,11 @@ import java.io.InputStreamReader;
 
 /**
  *
- * @author ESTEBAN
+ * @author ESTEBAN Obtener el numero mayor y menor entre 3 numeros
+ *
+ *
  */
-public class Ejercicio1 {
+public class EjercicioUno {
 
     public static void main(String[] args) throws IOException {
 
@@ -35,18 +37,18 @@ public class Ejercicio1 {
 
         if (n2 > numeroMayor) {
             numeroMayor = n2;
-            if (n3 > numeroMayor) {
-                numeroMayor = n3;
-            }
+        }
+        if (n3 > numeroMayor) {
+            numeroMayor = n3;
         }
 
         int numeroMenor = n1;
 
-        if (n2 < numeroMayor) {
+        if (n2 < numeroMenor) {
             numeroMenor = n2;
-            if (n3 < numeroMenor) {
-                numeroMenor = n3;
-            }
+        }
+        if (n3 < numeroMenor) {
+            numeroMenor = n3;
         }
 
         String respuesta = numeroMayor + " es el mayor y " + numeroMenor + " es menor.";
