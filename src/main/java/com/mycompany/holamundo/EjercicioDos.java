@@ -11,31 +11,37 @@ import java.io.InputStreamReader;
 /**
  *
  * @author ESTEBAN
+ * Funciones en java
+ * 
  */
 public class EjercicioDos {
 
     public static void main(String[] args) throws IOException {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         System.out.println("Ingrese el primer numero:");
-        String numeroUno = br.readLine();
+        int primerNumero = cargarNumero();
 
         System.out.println("Ingrese el segundo numero:");
-        String numeroDos = br.readLine();
+
+        int segundoNumero = cargarNumero();
 
         System.out.println("Ingrese el tercer numero:");
-        String numeroTres = br.readLine();
 
-        obtenerNumeroMayor(numeroUno, numeroDos, numeroTres);
+        int tercerNumero = cargarNumero();
+
+        obtenerNumeroMayor(primerNumero, segundoNumero, tercerNumero);
+        obtenerNumeroMenor(primerNumero, segundoNumero, tercerNumero);
 
     }
 
-    private static void obtenerNumeroMayor(String numeroUno, String numeroDos, String numeroTres) {
+    private static int cargarNumero() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String numeroUno = br.readLine();
+        int numero = Integer.parseInt(numeroUno);
+        return numero;
+    }
 
-        int primerNumero = Integer.parseInt(numeroUno);
-        int segundoNumero = Integer.parseInt(numeroDos);
-        int tercerNumero = Integer.parseInt(numeroTres);
+    private static void obtenerNumeroMayor(int primerNumero, int segundoNumero, int tercerNumero) {
 
         int numeroMayor = primerNumero;
 
@@ -46,6 +52,11 @@ public class EjercicioDos {
             numeroMayor = tercerNumero;
         }
 
+        System.out.println("El numero mayor es:" + numeroMayor);
+    }
+
+    private static void obtenerNumeroMenor(int primerNumero, int segundoNumero, int tercerNumero) {
+
         int numeroMenor = primerNumero;
 
         if (segundoNumero < numeroMenor) {
@@ -55,7 +66,6 @@ public class EjercicioDos {
             numeroMenor = tercerNumero;
         }
 
-        String respuesta = numeroMayor + " es el mayor y " + numeroMenor + " es menor.";
-        System.out.println(respuesta);
+        System.out.println("El numero menor es:" + numeroMenor);
     }
 }

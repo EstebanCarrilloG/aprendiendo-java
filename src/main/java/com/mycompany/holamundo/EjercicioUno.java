@@ -10,8 +10,8 @@ import java.io.InputStreamReader;
 
 /**
  *
- * @author ESTEBAN Obtener el numero mayor y menor entre 3 numeros
- *
+ * @author ESTEBAN 
+ * Obtener el numero mayor y menor entre 3 numeros
  *
  */
 public class EjercicioUno {
