@@ -3,6 +3,7 @@
  */
 package com.mycompany.holamundo;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -13,6 +14,8 @@ public class Holamundo {
 
     public static void main(String[] args) {
 
+        System.out.println("---- Hola mundo ----");
+
         String nombre = "Esteban";
         Integer followersInstagram = 255;
         Integer followersYoutube = 900;
@@ -22,20 +25,24 @@ public class Holamundo {
 
         /* ----------------------------- */
         // Input por consola
+        
+        Scanner teclado = new Scanner(System.in);
         int edad;
-        try (
-                Scanner reader = new Scanner(System.in) // Reading from System.in
-                ) {
-            System.out.println("Ingrese un numero: ");
-            edad = reader.nextInt(); // Scans the next token of the input as an int.
-        }
+        boolean continua;
+        do {
+            try {
+                continua = false;
+                System.out.print("Ingrese un valor entero:");
+                edad = teclado.nextInt();
+                String mensaje = edad >= 18 ? "Es mayor de edad" : "Es menor de edad";
+                System.out.println(mensaje);
 
-        Boolean esMayorDeEdad = edad >= 18;
+            } catch (InputMismatchException ex) {
+                System.out.println("Debe ingresar obligatoriamente un número entero.");
+                teclado.next();
+                continua = true;
+            }
+        } while (continua);
 
-        if (esMayorDeEdad) {
-            System.out.println("Es mayor de edad");
-        } else {
-            System.out.println("Es menor de edad");
-        }
     }
 }
