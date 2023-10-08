@@ -25,7 +25,6 @@ public class Holamundo {
 
         /* ----------------------------- */
         // Input por consola
-        
         Scanner teclado = new Scanner(System.in);
         int edad;
         boolean continua;
