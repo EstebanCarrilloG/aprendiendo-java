@@ -87,12 +87,12 @@ public class ClienteDao {
         return listado;
 
     }
-    
+
     public void editar(Cliente cliente) throws ClassNotFoundException {
 
         try {
             Connection conexion = this.conectar();
-            String sql = "INSERT INTO clientes (`nombre`, `apellido`, `telefono`, `email`) VALUES ('" + cliente.getNombre() + "', '" + cliente.getApellido() + "', '" + cliente.getTelefono() + "', '" + cliente.getEmail() + " ');";
+            String sql = "UPDATE `cursojava`.`clientes` SET `nombre` = '" + cliente.getNombre() + "', `apellido` = '" + cliente.getApellido() + "', `telefono` = '" + cliente.getTelefono() + "', `email` = '" + cliente.getEmail() + "' WHERE (`id` = '" + cliente.getId() + "');";
             Statement statemen = conexion.createStatement();
             statemen.execute(sql);
         } catch (ClassNotFoundException | SQLException ex) {
@@ -110,10 +110,19 @@ public class ClienteDao {
     public void eliminar(String id) throws ClassNotFoundException, SQLException {
 
         Connection conexion = this.conectar();
-        String sql = "DELETE FROM clientes WHERE `id` = "+ id +";";
+        String sql = "DELETE FROM clientes WHERE `id` = " + id + ";";
 
         Statement statemen = conexion.createStatement();
         statemen.execute(sql);
+
+    }
+
+    public void guardar(Cliente persona, int id) throws ClassNotFoundException {
+        if (id != -1) {
+            editar(persona);
+        } else {
+            agregar(persona);
+        }
 
     }
 }

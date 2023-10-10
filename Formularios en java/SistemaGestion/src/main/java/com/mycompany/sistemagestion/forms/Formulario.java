@@ -48,6 +48,9 @@ public class Formulario extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
+        btnEditar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -91,30 +94,30 @@ public class Formulario extends javax.swing.JFrame {
 
         jLabel4.setText("Telefono:");
 
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("ID");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(btnEliminar))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -122,20 +125,37 @@ public class Formulario extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(26, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(btnGuardar)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addComponent(btnGuardar))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(btnEditar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminar)))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
@@ -151,62 +171,75 @@ public class Formulario extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
-                        .addGap(0, 66, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnGuardar)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
+                    .addComponent(btnEditar)
                     .addComponent(btnEliminar))
-                .addGap(27, 27, 27))
+                .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 List<Cliente> lista = new ArrayList<>();
-
+    
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
+
+        int id = this.listPersonas.getSelectedIndex();
+        ClienteDao dao = new ClienteDao();
         Cliente persona = new Cliente();
+        
         persona.setNombre(this.txtNombre.getText());
         persona.setApellido(this.txtApellido.getText());
         persona.setEmail(this.txtEmail.getText());
         persona.setTelefono(this.txtTelefono.getText());
-
-        ClienteDao dao = new ClienteDao();
+        
+        if (id != -1) {
+            persona.setId(this.lblId.getText());            
+            JOptionPane.showMessageDialog(rootPane, "Registro Editado");
+        } else {
+            
+            JOptionPane.showMessageDialog(rootPane, "Registro Añadido");            
+        }
+        
+        
+        
         try {
-            dao.agregar(persona);
+            dao.guardar(persona, id);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         actualizarLista();
-
-        JOptionPane.showMessageDialog(rootPane, "Registro añadido");
         limpiarTextBoxs();
-
+        
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
         int id = this.listPersonas.getSelectedIndex();
+        
+        if (id != -1) {
+            
+            Cliente cliente = lista.get(id);
+            
+            ClienteDao dao = new ClienteDao();
+            
+            try {
+                dao.eliminar(cliente.getId());
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            actualizarLista();
 
-        Cliente cliente = lista.get(id);
-
-        ClienteDao dao = new ClienteDao();
-
-        actualizarLista();
-        try {
-            dao.eliminar(cliente.getId());
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
+            //Seleccionar elemento por nombre: (String) .getSelectedValuesList().get(0);
+            JOptionPane.showMessageDialog(rootPane, "Registro eliminado");
         }
-
-        //Seleccionar elemento por nombre: (String) .getSelectedValuesList().get(0);
-        JOptionPane.showMessageDialog(rootPane, "Registro eliminado");
 
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -223,25 +256,41 @@ List<Cliente> lista = new ArrayList<>();
         // TODO add your handling code here:
     }//GEN-LAST:event_listPersonasMouseClicked
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // TODO add your handling code here:
+        int id = this.listPersonas.getSelectedIndex();
+        
+        if (id != -1) {
+            
+            Cliente cliente = lista.get(id);
+            this.lblId.setText(cliente.getId());
+            this.txtNombre.setText(cliente.getNombre());
+            this.txtApellido.setText(cliente.getApellido());
+            this.txtTelefono.setText(cliente.getTelefono());
+            this.txtEmail.setText(cliente.getEmail());
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
+    
     private void actualizarLista() {
         try {
             ClienteDao dao = new ClienteDao();
             lista = dao.listar();
-
+            
             DefaultListModel datos = new DefaultListModel();
             //System.out.println(lista);
             for (int i = 0; i < lista.size(); i++) {
                 Cliente persona = lista.get(i);
                 datos.addElement(persona.getNombreCompleto());
             }
-
+            
             this.listPersonas.setModel(datos);
         } catch (ClassNotFoundException ex) {
             System.out.println(ex);
         }
     }
-
+    
     private void limpiarTextBoxs() {
+        this.lblId.setText("");
         this.txtNombre.setText("");
         this.txtApellido.setText("");
         this.txtEmail.setText("");
@@ -284,13 +333,16 @@ List<Cliente> lista = new ArrayList<>();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblId;
     private javax.swing.JList<String> listPersonas;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtEmail;
